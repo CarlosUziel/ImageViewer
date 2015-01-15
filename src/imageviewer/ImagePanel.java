@@ -18,7 +18,7 @@ class ImagePanel extends JPanel {
     }
 
     public void load(File directory) {
-        System.out.println(directory.getAbsolutePath());
+        System.out.println("");
         image = new GalleryLoader(directory.listFiles(new ImageFilter())).load();
         if (image != null) {
             setImage(image);
