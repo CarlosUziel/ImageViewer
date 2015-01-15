@@ -17,6 +17,9 @@ class GalleryLoader {
     }
 
     private void createGallery() {
+        if(listFiles == null){
+            return;
+        }
         if(listFiles.length == 0){
             return;
         }
