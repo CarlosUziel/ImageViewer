@@ -4,15 +4,15 @@ import java.awt.event.ActionEvent;
 
 public class NextImageCommand implements Command {
 
-    private PaintPanel paintPanel;
+    private ImagePanel imagePanel;
 
-    public NextImageCommand(PaintPanel paintPanel) {
-        this.paintPanel = paintPanel;
+    public NextImageCommand(ImagePanel imagePanel) {
+        this.imagePanel = imagePanel;
     }
 
     @Override
     public void execute() {
-        paintPanel.setImage(paintPanel.getImage().getNext());
+        imagePanel.setImage(imagePanel.getImage().getNext());
     }
 
     @Override
