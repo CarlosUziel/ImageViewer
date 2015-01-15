@@ -42,7 +42,7 @@ class ApplicationMenuBar extends JMenuBar {
             }
 
             private String getDirectory() {
-                return JOptionPane.showInputDialog(null);
+                return JOptionPane.showInputDialog(imagePanel, "Introduzca el directorio con las imágenes a mostrar:", "Selección de directorio", JOptionPane.QUESTION_MESSAGE);
             }
         });
         return openJMenuItem;
