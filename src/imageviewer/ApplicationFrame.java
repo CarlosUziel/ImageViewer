@@ -15,6 +15,7 @@ class ApplicationFrame extends JFrame {
     private ApplicationMenuBar applicationMenuBar;
 
     public ApplicationFrame() {
+        this.setLocationRelativeTo(null);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setSize(300, 300);
         this.setLayout(new BorderLayout());
