@@ -5,7 +5,7 @@ import java.awt.event.ActionEvent;
 
 public class NextImageCommand implements Command {
 
-    private ImagePanel imagePanel;
+    private final ImagePanel imagePanel;
 
     public NextImageCommand(ImagePanel imagePanel) {
         this.imagePanel = imagePanel;

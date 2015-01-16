@@ -10,10 +10,10 @@ import javax.swing.JOptionPane;
 
 class ApplicationMenuBar extends JMenuBar {
 
-    private final ImagePanel imagePanel;
+    private final ActionListener[] commands;
 
-    public ApplicationMenuBar(ImagePanel imagePanel) {
-        this.imagePanel = imagePanel;
+    public ApplicationMenuBar(ActionListener[] commands) {
+        this.commands = commands;
         createComponents();
     }
 
@@ -34,17 +34,7 @@ class ApplicationMenuBar extends JMenuBar {
     private JMenuItem createOpenItem() {
         JMenuItem openJMenuItem = new JMenuItem();
         openJMenuItem.setText("Open");
-        openJMenuItem.addActionListener(new ActionListener() {
-
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                imagePanel.load(new File(getDirectory()));
-            }
-
-            private String getDirectory() {
-                return JOptionPane.showInputDialog(imagePanel, "Introduzca el directorio con las imágenes a mostrar:", "Selección de directorio", JOptionPane.QUESTION_MESSAGE);
-            }
-        });
+        openJMenuItem.addActionListener(commands[0]);
         return openJMenuItem;
     }
 

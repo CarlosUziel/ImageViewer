@@ -15,18 +15,22 @@ public class Image implements SwingImage{
         return path;
     }  
 
+    @Override
     public Image getPrev() {
         return prev;
     }
 
+    @Override
     public Image getNext() {
         return next;
     }
 
+    @Override
     public void setPrev(Image prev) {
         this.prev = prev;
     }
 
+    @Override
     public void setNext(Image next) {
         this.next = next;
     }

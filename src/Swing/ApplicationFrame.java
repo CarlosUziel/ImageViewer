@@ -1,5 +1,6 @@
 package Swing;
 
+import Control.LoadImageCommand;
 import Control.NextImageCommand;
 import Control.PrevImageCommand;
 import java.awt.BorderLayout;
@@ -36,20 +37,25 @@ public class ApplicationFrame extends JFrame {
     }
 
     private JMenuBar createMenuBar() {
-        applicationMenuBar = new ApplicationMenuBar(imagePanel);
+        applicationMenuBar = new ApplicationMenuBar(createLoadImageCommand());
         return applicationMenuBar;
     }
 
     private ButtonPanel createButtonPanel() {
-        ButtonPanel buttonPanel = new ButtonPanel(createCommands());
+        ButtonPanel buttonPanel = new ButtonPanel(createButtonsCommands());
         return buttonPanel;
     }
 
-    private ActionListener[] createCommands() {
+    private ActionListener[] createButtonsCommands() {
         return new ActionListener[]{
             new PrevImageCommand(imagePanel),
             new NextImageCommand(imagePanel)
         };
     }
 
+    private ActionListener[] createLoadImageCommand() {
+        return new ActionListener[]{
+            new LoadImageCommand(imagePanel)
+        };
+    }
 }
