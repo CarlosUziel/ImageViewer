@@ -1,9 +1,9 @@
 package imageviewer;
 
-public class ImageViewer {
+public class Application {
 
     public static void main(String[] args) {
-        new ImageViewer().execute();
+        new Application().execute();
     }
 
     private void execute() {
