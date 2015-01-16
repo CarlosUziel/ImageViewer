@@ -1,5 +1,7 @@
-package imageviewer;
+package Swing;
 
+import Control.NextImageCommand;
+import Control.PrevImageCommand;
 import java.awt.BorderLayout;
 import static java.awt.BorderLayout.CENTER;
 import static java.awt.BorderLayout.NORTH;
@@ -9,7 +11,7 @@ import javax.swing.JFrame;
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 import javax.swing.JMenuBar;
 
-class ApplicationFrame extends JFrame {
+public class ApplicationFrame extends JFrame {
 
     private ImagePanel imagePanel;
     private ApplicationMenuBar applicationMenuBar;

@@ -1,17 +1,14 @@
-package imageviewer;
+package Model;
 
-public class Image {
-    private Dimension dimension;
+import Swing.SwingImage;
+
+public class Image implements SwingImage{
     private final String path;
     private Image prev;
     private Image next;
 
     public Image(String path) {
         this.path = path;
-    }
-    
-    public Dimension getDimension() {
-        return dimension;
     }
 
     public String getPath() {
@@ -24,10 +21,6 @@ public class Image {
 
     public Image getNext() {
         return next;
-    }
-
-    public void setDimension(Dimension dimension) {
-        this.dimension = dimension;
     }
 
     public void setPrev(Image prev) {

@@ -1,5 +1,9 @@
-package imageviewer;
+package Swing;
 
+import View.Persistence.GalleryLoader;
+import Model.Image;
+import View.Persistence.ImageFilter;
+import View.Persistence.ImageLoader;
 import java.awt.BorderLayout;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
@@ -7,7 +11,7 @@ import java.io.File;
 import java.io.IOException;
 import javax.swing.JPanel;
 
-class ImagePanel extends JPanel {
+public class ImagePanel extends JPanel {
 
     private Image image;
     private ButtonPanel buttonPanel;

@@ -1,4 +1,4 @@
-package imageviewer;
+package Control;
 
 import java.awt.event.ActionListener;
 

@@ -1,8 +1,9 @@
-package imageviewer;
+package View.Persistence;
 
+import Model.Image;
 import java.io.File;
 
-class GalleryLoader {
+public class GalleryLoader {
 
     private final File[] listFiles;
     private Image first;

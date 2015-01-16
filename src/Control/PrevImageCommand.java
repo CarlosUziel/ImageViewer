@@ -1,18 +1,19 @@
-package imageviewer;
+package Control;
 
+import Swing.ImagePanel;
 import java.awt.event.ActionEvent;
 
-public class NextImageCommand implements Command {
-
+public class PrevImageCommand implements Command {
+    
     private ImagePanel imagePanel;
 
-    public NextImageCommand(ImagePanel imagePanel) {
+    public PrevImageCommand(ImagePanel imagePanel) {
         this.imagePanel = imagePanel;
     }
 
     @Override
     public void execute() {
-        imagePanel.setImage(imagePanel.getImage().getNext());
+        imagePanel.setImage(imagePanel.getImage().getPrev());
     }
 
     @Override

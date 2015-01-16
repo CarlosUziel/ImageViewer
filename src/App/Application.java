@@ -1,4 +1,6 @@
-package imageviewer;
+package App;
+
+import Swing.ApplicationFrame;
 
 public class Application {
 

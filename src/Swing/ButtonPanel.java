@@ -1,5 +1,6 @@
-package imageviewer;
+package Swing;
 
+import Model.Image;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JPanel;
