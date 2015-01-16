@@ -1,9 +1,9 @@
 package Control;
 
+import Swing.DirectoryChooserDialog;
 import Swing.ImagePanel;
 import java.awt.event.ActionEvent;
 import java.io.File;
-import javax.swing.JOptionPane;
 
 public class LoadImageCommand implements Command {
 
@@ -15,7 +15,7 @@ public class LoadImageCommand implements Command {
 
     @Override
     public void execute() {
-        imagePanel.load(new File(getDirectory()));
+        imagePanel.load(getDirectory());
     }
 
     @Override
@@ -23,8 +23,8 @@ public class LoadImageCommand implements Command {
         execute();
     }
 
-    private String getDirectory() {
-        return JOptionPane.showInputDialog(imagePanel, "Introduce the directory containing the desired images:", "Selección de directorio", JOptionPane.QUESTION_MESSAGE);
+    private File getDirectory() {
+        return new DirectoryChooserDialog().getDirectory();
     }
 
 }

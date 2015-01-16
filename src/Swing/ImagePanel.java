@@ -22,6 +22,9 @@ public class ImagePanel extends JPanel {
     }
 
     public void load(File directory) {
+        if(directory == null){
+            return;
+        }
         image = new GalleryLoader(directory.listFiles(new ImageFilter())).load();
         if (image != null) {
             setImage(image);
