@@ -1,18 +1,18 @@
 package View.Persistence;
 
-import Model.Image;
+import Swing.SwingImage;
 import java.io.File;
 
 public class GalleryLoader {
 
     private final File[] listFiles;
-    private Image first;
+    private SwingImage first;
 
     public GalleryLoader(File[] listFiles) {
         this.listFiles = listFiles;
     }
 
-    public Image load() {
+    public SwingImage load() {
         createGallery();
         return first;
     }
@@ -24,11 +24,12 @@ public class GalleryLoader {
         if(listFiles.length == 0){
             return;
         }
-        Image prev, current;
-        first = prev = current = new Image(listFiles[0].getAbsolutePath());
+        SwingImage prev;
+        SwingImage current;
+        first = prev = current = new SwingImage(listFiles[0].getAbsolutePath());
         
         for (int i = 1; i < listFiles.length; i++) {
-            current = new Image(listFiles[i].getAbsolutePath());
+            current = new SwingImage(listFiles[i].getAbsolutePath());
             current.setPrev(prev);
             prev.setNext(current);
             prev = current;

@@ -1,13 +1,12 @@
 package Swing;
 
-import Model.Image;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
 public class ButtonPanel extends JPanel {
 
-    private Image image;
+    private SwingImage image;
     private int index = 0;
     private final ActionListener[] commands;
 

@@ -1,19 +1,16 @@
 package Swing;
 
 import View.Persistence.GalleryLoader;
-import Model.Image;
 import View.Persistence.ImageFilter;
-import View.Persistence.ImageLoader;
 import java.awt.BorderLayout;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 import java.io.File;
-import java.io.IOException;
 import javax.swing.JPanel;
 
 public class ImagePanel extends JPanel {
 
-    private Image image;
+    private SwingImage image;
     private ButtonPanel buttonPanel;
     private BufferedImage bImage;
 
@@ -22,7 +19,7 @@ public class ImagePanel extends JPanel {
     }
 
     public void load(File directory) {
-        if(directory == null){
+        if (directory == null) {
             return;
         }
         image = new GalleryLoader(directory.listFiles(new ImageFilter())).load();
@@ -31,16 +28,13 @@ public class ImagePanel extends JPanel {
         }
     }
 
-    public void setImage(Image image) {
+    public void setImage(SwingImage image) {
         this.image = image;
-        try {
-            bImage = ImageLoader.load(image.getPath());
-            repaint();
-        } catch (IOException ex) {
-        }
+        bImage = image.getBitmap().load();
+        repaint();
     }
 
-    public Image getImage() {
+    public SwingImage getImage() {
         return image;
     }
 
@@ -49,7 +43,7 @@ public class ImagePanel extends JPanel {
         super.paint(g);
         int width = getImageWidth();
         int height = getImageHeight();
-        g.drawImage(bImage, (getWidth()-width)/2, (getHeight()-height)/2, width, height, null);
+        g.drawImage(bImage, (getWidth() - width) / 2, (getHeight() - height) / 2, width, height, null);
     }
 
     private int getImageWidth() {
@@ -70,7 +64,7 @@ public class ImagePanel extends JPanel {
         }
         float aspectRatio = bImage.getHeight() / (float) bImage.getWidth();
         if (getWidth() * aspectRatio < getHeight()) {
-            return (int)(getWidth()*aspectRatio);
+            return (int) (getWidth() * aspectRatio);
         } else {
             return getHeight();
         }

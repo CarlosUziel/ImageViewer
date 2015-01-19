@@ -30,7 +30,7 @@ class ApplicationMenuBar extends JMenuBar {
 
     private JMenuItem createOpenItem() {
         JMenuItem openJMenuItem = new JMenuItem();
-        openJMenuItem.setText("Open");
+        openJMenuItem.setText("Open directory...");
         openJMenuItem.addActionListener(commands[0]);
         return openJMenuItem;
     }
